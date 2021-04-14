@@ -1,0 +1,35 @@
+<!-- **********************************************/
+// Name of Project: JS BOM Screen.
+// Author: Ganesh B Naykawadi.
+// Date Created: 21 September, 2020.
+/********************************************** !-->
+
+
+<!DOCTYPE html>
+<html>
+
+<body onresize="getMeasure()">
+
+    <p id="demo"></p>
+
+    <script>
+        function getMeasure() {
+
+            var w = window.innerWidth ||
+                document.documentElement.clientWidth ||
+                document.body.clientWidth;
+
+            var h = window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight;
+
+            var x = document.getElementById("demo");
+            x.innerHTML = "Browser inner window <b>Width:</b> " + w + " x <b>Height:</b> " + h + ".";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

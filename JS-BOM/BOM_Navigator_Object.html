@@ -1,0 +1,46 @@
+<!-- **********************************************/
+// Name of Project: JS BOM Navigator Object.
+// Author: Ganesh B Naykawadi.
+// Date Created: 22 September, 2020.
+/********************************************** !-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The Navigator Object</h2>
+
+<p>The appVersion property returns version information about the browser:</p>
+
+<p id="demo"></p>
+
+<script>
+
+//variable declarations
+let browserName = "", appAgent = "", platform = "";
+
+appAgent = navigator.userAgent;
+console.log(appAgent);
+//check the browser
+if(appAgent.includes("Chrome"))
+  browserName = "Google Chrome";
+else if(appAgent.includes("Mozilla"))
+  browserName = "Mozilla Firefox";
+else
+  browserName = "Unknown Browser";
+
+//check the platform
+if(appAgent.includes("Windows"))
+  platform = "Windows";
+else if(appAgent.includes("Linux"))
+  platform = "Linux";
+else
+  platform = "Unknown platform";
+
+//print the result
+document.getElementById("demo").innerHTML = "You are using "+ browserName +" on the "+ platform + " platform.";
+
+</script>
+
+</body>
+</html>

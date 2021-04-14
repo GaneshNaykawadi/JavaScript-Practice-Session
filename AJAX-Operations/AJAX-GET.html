@@ -1,0 +1,36 @@
+<!-- **********************************************/
+// Name of Project: AJAX GET mehtod.
+// Author: Ganesh B Naykawadi.
+// Date Created: 25 September, 2020.
+/********************************************** !-->
+
+
+<html>
+
+<head>
+    <title>JS Array Manipulation</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ganesh Naykawadi" />
+    <meta name="description" content="demonstration of how to use AJAX GET method." />
+    <script>
+      function loadDocument() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+          if(this.readyState == 4 && this.status == 200) {
+              document.getElementById("article-content").innerHTML = this.responseText;
+          }
+        };
+
+        xhttp.open("GET", "AJAX-Info.txt", true);
+        xhttp.send();
+      }
+    </script>
+</head>
+
+<body>
+    <div id="article-content">
+      <button type="submit" onclick="loadDocument()">Load Document</button>
+    </div>
+</body>
+
+</html>

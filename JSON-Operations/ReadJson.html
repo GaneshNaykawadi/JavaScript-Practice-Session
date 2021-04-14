@@ -1,0 +1,39 @@
+<!-- **********************************************/
+// Name of Project: JSON parse mehtod.
+// Author: Ganesh B Naykawadi.
+// Date Created: 27 September, 2020.
+/********************************************** !-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JSON parse() method</title>
+  </head>
+  <body>
+    <div id="data">
+
+    </div>
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+          var myObj = JSON.parse(this.responseText, function(key, value) {
+            if(key == "dob")  {
+              let birthday = new Date(value);
+              console.log(birthday);
+              return ""+ birthday.getUTCDate() +"/"+ (birthday.getUTCMonth() + 1) +"/"+ birthday.getUTCFullYear() +"";
+            } 
+            else
+              return value;
+          });
+          
+          document.getElementById("data").innerHTML = "My name is "+ myObj.name +". I'm "+ myObj.age +" years old. I currently lives in "+ myObj.city +" city and my gender is "+ (myObj.male === true ? "male" : "female")+ ". and my Date of Birth is: "+ myObj.dob +".";
+        }
+      };
+      xhttp.open("GET", "datafile.json", true);
+      xhttp.send();
+    </script>
+  </body>
+</html>
