@@ -15,6 +15,7 @@
 
     </div>
     <script>
+         
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
 
@@ -24,11 +25,11 @@
               let birthday = new Date(value);
               console.log(birthday);
               return ""+ birthday.getUTCDate() +"/"+ (birthday.getUTCMonth() + 1) +"/"+ birthday.getUTCFullYear() +"";
-            } 
+            }
             else
               return value;
           });
-          
+
           document.getElementById("data").innerHTML = "My name is "+ myObj.name +". I'm "+ myObj.age +" years old. I currently lives in "+ myObj.city +" city and my gender is "+ (myObj.male === true ? "male" : "female")+ ". and my Date of Birth is: "+ myObj.dob +".";
         }
       };
